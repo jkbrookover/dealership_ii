@@ -1,0 +1,31 @@
+<article>
+  <header>
+    <h1><%= @vehicle.year %>
+      <%= @vehicle.make %>
+      <%= @vehicle.model %></h1>
+  </header>
+  <h2>Description</h2>
+  <p>
+    <%= @vehicle.color %>
+  </p>
+  <p>
+    <%= @vehicle.description %>
+  </p>
+  <p>
+    <%= @vehicle.category %>
+  </p>
+  <p>
+    <%= @vehicle.seating %>
+  </p>
+  <p>
+    <%= @vehicle.mileage %>
+  </p>
+  <h3>Price</h3>
+  <p>
+    <%= @vehicle.price %>
+  </p>
+</article>
+<nav>
+  <%= link_to "Edit", edit_vehicle_path(@vehicle) %>
+  <%= link_to "Delete", vehicle_path(@vehicle), method: :delete, data: {confirm: 'Are you sure?'} %>
+</nav>

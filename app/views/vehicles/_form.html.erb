@@ -1,0 +1,43 @@
+<%= form_for(@vehicle) do |f| %>
+  <%= render "shared/errors" %>
+  <p>
+    <%= f.label :year %><br/>
+    <%= f.number_field :year, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :make %>
+    <%= f.text_field :make %>
+  </p>
+  <p>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :category %>
+    <%= f.select :category, Vehicle::CATEGORIES, prompt: "Pick one" %>
+  </p>
+  <p>
+    <%= f.label :seating %>
+    <%= f.number_field :seating %>
+  </p>
+  <p>
+    <%= f.label :mileage %>
+    <%= f.number_field :mileage %>
+  </p>
+  <p>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </p>
+  <p>
+    <%= f.submit %>
+    <%= link_to "Cancel", vehicles_path %>
+  </p>
+<% end %>

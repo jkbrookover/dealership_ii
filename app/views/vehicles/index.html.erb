@@ -1,0 +1,33 @@
+<h1><%= pluralize(@vehicles.size, 'Vehicle') %></h1>
+
+<% @vehicles.each do |vehicle| %>
+  <article>
+    <header>
+      <h2>
+        <%= link_to(vehicle.year, vehicle_path(vehicle)) %>
+        <%= link_to(vehicle.make, vehicle_path(vehicle)) %>
+        <%= link_to(vehicle.model, vehicle_path(vehicle)) %>
+      </h2>
+    </header>
+
+    <p>
+      <h4><%= vehicle.color %></h4>
+    </p>
+    <p>
+      <h4><%= vehicle.category %><h4>
+    </p>
+    <p>
+      <h4><%= vehicle.seating %></h4>
+    </p>
+    <p>
+      <h4><%= vehicle.price %></h4>
+    </p>
+    <p>
+      <%= truncate(vehicle.description, length: 40, seperator: ' ') %>
+    </p>
+
+
+
+  </article>
+<% end %>
+<%= link_to("Add new vehicle", new_vehicle_path) %>
